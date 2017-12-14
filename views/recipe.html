@@ -1,0 +1,11 @@
+<img ng-src="{{recipe.thumb}}" ng-show="recipe.thumb">
+<h2>{{recipe.name}}</h2>
+<p><strong>{{recipe.description}}</strong></p>
+<h4>Ingredients:</h4>
+<ul>
+	<li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+</ul>
+<h4>Directions:</h4>
+<ul>
+	<li ng-repeat="step in recipe.directions">{{step}}</li>
+</ul>

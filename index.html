@@ -4,21 +4,34 @@
 	<title>The Seasoned Cook</title>
 	<link href="content/css/styles.css" rel="stylesheet" type="text/css" />
 	<script src="app/lib/angular.min.js"></script>
+	<!-- <script src="app/lib/angular-ui-router.min.js"></script> -->
+	<script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
 	<script src="app/app.js"></script>
+	<script src="app/services.js"></script>
 </head>
 <body>
-<ng-include src="'header.html'"></ng-include>
-<div ng-controller="RecipeController">
-	<ul>
-		<li ng-repeat="recipe in recipes">
-			<h3>{{recipe.name}}</h3>
-			<p>{{recipe.description}}</p>
-			<ul>
-				<li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
-			</ul>
-		</li>
-	</ul>
-</div>
+
+<header ng-include="'views/header.html'"></header>
+
+<!-- <a href="#!/">home</a> |
+<a href="#!/first-msg">first message</a> |
+<a href="#!/second-msg">second message</a> -->
+
+
+<!-- 
+<a ui-sref="home()">home</a> |
+<a ui-sref="firstMessage()">first message</a> |
+<a ui-sref="secondMessage()">second message</a>
+ -->
+
+
+<div ui-view></div>
+
+<!-- <div ui-view></div>
+
+<main>
+	<div ui-view></div>
+</main> -->
 
 </body>
 </html>

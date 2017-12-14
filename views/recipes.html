@@ -1,0 +1,11 @@
+<div class="content">
+	<ul>
+		<li ng-repeat="recipe in recipes | orderBy: 'name'">
+			<a ui-sref="recipe({id: recipe._id})">
+				<img ng-src="{{recipe.thumb}}" style="margin: -12px 10px 0 0; float:left; width: 150px;" ng-show="recipe.thumb">
+			</a>
+			<h3>{{recipe.name}}</h3>
+			<p>{{recipe.description}}</p>
+		</li>
+	</ul>
+</div>
