@@ -4,36 +4,44 @@ var myApp = angular.module('myApp', ['ui.router']);
 
 myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 	$stateProvider
-	.state('home',{
+
+	.state('app', {
 		url: '/',
-		templateUrl: 'views/home.html'
+		views:{
+			'header': {
+				templateUrl : 'views/header.html'
+			},
+			'content' : {
+				templateUrl : 'views/home.html'
+			}
+		}
 	})
-	.state('recipes',{
-		url: '/recipes',
-		templateUrl: 'views/recipes.html',
-		controller: 'RecipesController'
+
+	// .state('home',{
+	// 	url: '/',
+	// 	templateUrl: 'views/home.html'
+	// })
+	.state('app.recipes',{
+		url: 'recipes',
+		views: {
+			'content@': {
+				templateUrl: 'views/recipes.html',
+				controller: 'RecipesController'
+			}
+		}
 	})
-	.state('recipe',{
-		url: '/recipes/:id',
-		templateUrl: 'views/recipe.html',
-		controller: 'RecipeController'
+	.state('app.recipe',{
+		url: 'recipes/:id',
+		views: {
+			'content@': {
+				templateUrl: 'views/recipe.html',
+				controller: 'RecipeController'
+			}
+		}	
 	})
-	.state('firstMessage', {
-		url: '/first-msg',
-		templateUrl: 'views/msg1.html',
-		controller: 'msg1'
-	})
-	.state('secondMessage', {
-		url: '/second-msg',
-		templateUrl: 'views/msg2.html',
-		controller: 'msg2'
-	});
-	// .state('noroute', {
-	// 	url: '*path',
-	// 	template: '<strong>no route avaialable...try clicking on links</strong>'
-	// });
 
 	$urlRouterProvider.otherwise('/');
+
 }]);
 
 

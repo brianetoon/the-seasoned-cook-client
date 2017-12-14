@@ -11,21 +11,11 @@
 </head>
 <body>
 
-<header ng-include="'views/header.html'"></header>
+<!-- <header ng-include="'views/header.html'"></header> -->
 
-<!-- <a href="#!/">home</a> |
-<a href="#!/first-msg">first message</a> |
-<a href="#!/second-msg">second message</a> -->
+<div ui-view="header"></div>
 
-
-<!-- 
-<a ui-sref="home()">home</a> |
-<a ui-sref="firstMessage()">first message</a> |
-<a ui-sref="secondMessage()">second message</a>
- -->
-
-
-<div ui-view></div>
+<div ui-view="content"></div>
 
 <!-- <div ui-view></div>
 
