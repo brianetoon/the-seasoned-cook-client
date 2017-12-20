@@ -16,11 +16,6 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $
 			}
 		}
 	})
-
-	// .state('home',{
-	// 	url: '/',
-	// 	templateUrl: 'views/home.html'
-	// })
 	.state('app.recipes',{
 		url: 'recipes',
 		views: {
